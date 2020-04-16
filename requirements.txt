@@ -1,0 +1,5 @@
+pytest-cov
+pandas
+scikit-learn
+numpy
+yapf
