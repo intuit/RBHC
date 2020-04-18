@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="RBHC",
     packages=['RBHC'],
-    version="1.0.0",
+    version="1.0.1",
     author="Ashwith Atluri",
     author_email="ashwithatluri@gmail.com",
     description="RBHC",
