@@ -1,7 +1,3 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
   build:
@@ -44,7 +40,8 @@ jobs:
             - .
 
   publish:
-    - image: circleci/python:3.7.6
+    docker:
+      - image: circleci/python:3.7.6
 
     working_directory: ~/RBHC
 
