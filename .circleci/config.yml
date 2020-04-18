@@ -56,7 +56,7 @@ jobs:
           command: |
             pip install --upgrade twine setuptools wheel
             python setup.py sdist bdist_wheel
-            python -m twine upload dist/* --username ${USER} --password ${PASSWORD}
+            python -m twine upload dist/* --skip-existing --username ${USER} --password ${PASSWORD}
 workflows:
   version: 2
   build:
