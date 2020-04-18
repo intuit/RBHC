@@ -1,6 +1,6 @@
-# RBHC 
+# RBHC
 <p align="center">
-<img src="https://github.intuit.com/aatluri/RBHC/blob/master/Images/RBHC.png" width="400" height="400">
+<img src="https://github.com/intuit/RBHC/blob/master/Images/RBHC.png" width="400" height="400">
 </p>
 
 [![Build Status](https://build.intuit.com/macfarm/buildStatus/buildIcon?job=CG/RBHC-ci)](https://build.intuit.com/macfarm/job/CG/job/RBHC-ci/)
@@ -17,7 +17,7 @@ K-Means algorithm is applied on the initial dataset and a binary partition is cr
 ### Installation
 Prerequisites: python3 <br>
 ```
-pip install -i https://test.pypi.org/simple/ Rbhctest
+pip install RBHC
 ```
 
 ### Usage
@@ -72,4 +72,3 @@ All data files should be stored in data folder and check data folder for a sampl
 ### Contribution and license
 - [Contributing guidelines](.github/CONTRIBUTING.md)
 - [License](LICENSE)
-

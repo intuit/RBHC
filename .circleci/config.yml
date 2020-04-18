@@ -1,0 +1,78 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7.6
+
+    working_directory: ~/RBHC
+
+    steps:
+      - checkout
+
+      - run:
+          name: install dependencies
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+      - run:
+          name: run tests
+          command: |
+            cd Tests
+            py.test tests.py --cov=Clustering --cov-report=xml
+
+      - run:
+          name: linting
+          command: |
+            yapf -d RBHC/Clustering.py
+            if [ $? -eq 0 ];
+            then
+              echo "Executed successfully"
+            else
+              echo "Check yapf formatting"
+              exit
+            fi
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  publish:
+    - image: circleci/python:3.7.6
+
+    working_directory: ~/RBHC
+
+    steps:
+       - attach_workspace:
+          at: .
+       - run:
+          name: install dependencies
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+       - run:
+          name: publish to pip
+          command: |
+            pip install --upgrade twine setuptools wheel
+            python setup.py sdist bdist_wheel
+            python -m twine upload dist/* --username ${USER} --password ${PASSWORD}
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
