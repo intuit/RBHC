@@ -3,8 +3,9 @@
 <img src="https://github.com/intuit/RBHC/blob/master/Images/RBHC.png" width="400" height="400">
 </p>
 
-[![CircleCI](https://circleci.com/gh/intuit/RBHC/tree/master.svg?style=svg)](https://circleci.com/gh/intuit/RBHC/tree/master)
+[![CircleCI](https://circleci.com/gh/intuit/RBHC/tree/master.svg?style=svg&circle-token=8dc91b504991b931f05d3b116040a4dfee4d0586)](https://circleci.com/gh/intuit/RBHC/tree/master)
 [![codecov](https://codecov.tools.a.intuit.com/ghe/aatluri/RBHC/branch/master/graph/badge.svg)](https://codecov.tools.a.intuit.com/ghe/aatluri/RBHC)
+[![PyPI version](https://badge.fury.io/py/RBHC.svg)](https://badge.fury.io/py/RBHC)
 ## Recursive Binary Hierarchical Clustering
 This code is for accomplishing recursive binary hierarchical clustering of data <br>
 K-Means algorithm is applied on the initial dataset and a binary partition is created after which using chi square score statistic, the feature (event) that was responsible for the partition is found out. The remaining clusters are further divided recursively using the above approach until the cluster size reaches 1 or the silhouette score reaches the threshold value <br>
