@@ -19,12 +19,14 @@ jobs:
       - run:
           name: run tests
           command: |
+            . venv/bin/activate
             cd Tests
             py.test tests.py --cov=Clustering --cov-report=xml
 
       - run:
           name: linting
           command: |
+            . venv/bin/activate
             yapf -d RBHC/Clustering.py
             if [ $? -eq 0 ];
             then
@@ -48,12 +50,6 @@ jobs:
     steps:
        - attach_workspace:
           at: .
-       - run:
-          name: install dependencies
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
 
        - run:
           name: publish to pip
