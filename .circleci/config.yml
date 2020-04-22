@@ -22,6 +22,7 @@ jobs:
             . venv/bin/activate
             cd Tests
             py.test tests.py --cov=Clustering --cov-report=xml
+            bash <(curl -s https://codecov.io/bash)
 
       - run:
           name: linting

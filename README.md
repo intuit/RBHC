@@ -4,7 +4,7 @@
 </p>
 
 [![CircleCI](https://circleci.com/gh/intuit/RBHC/tree/master.svg?style=svg&circle-token=8dc91b504991b931f05d3b116040a4dfee4d0586)](https://circleci.com/gh/intuit/RBHC/tree/master)
-[![codecov](https://codecov.tools.a.intuit.com/ghe/aatluri/RBHC/branch/master/graph/badge.svg)](https://codecov.tools.a.intuit.com/ghe/aatluri/RBHC)
+[![codecov](https://codecov.io/gh/intuit/RBHC/branch/master/graph/badge.svg)](https://codecov.io/gh/intuit/RBHC)
 [![PyPI version](https://badge.fury.io/py/RBHC.svg)](https://badge.fury.io/py/RBHC)
 ## Recursive Binary Hierarchical Clustering
 This code is for accomplishing recursive binary hierarchical clustering of data <br>
